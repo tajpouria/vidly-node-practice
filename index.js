@@ -1,64 +1,33 @@
+const debug = require("debug")("app:debug");
+const config = require("config");
+const morgan = require("morgan");
+const helmet = require("helmet");
 const express = require("express");
 const Joi = require("joi");
-
 const app = express();
+const logger = require("./middlewares/logger");
+const auth = require("./middlewares/authentication");
+const home = require("./routes/home");
+const genres = require("./routes/genres");
+
+app.use(helmet());
 app.use(express.json());
-
-const genres = [
-  { id: 1, name: "Action" },
-  { id: 2, name: "Horror" },
-  { id: 3, name: "Romance" }
-];
-
-app.get("/api/genres", (req, res) => {
-  res.send(genres);
-});
-
-app.get("/api/genres/:id", (req, res) => {
-  const genre = genres.find(c => c.id == req.params.id);
-  if (!genre) return res.status(404).send("genresby given id not found");
-  res.send(genre);
-});
-
-app.post("/api/genres", (req, res) => {
-  const { error } = validation(req.body);
-  if (error) return res.send(error.details[0].message);
-
-  const genre = { id: genres.length + 1, name: req.body.name };
-  genres.push(genre);
-  res.send(genre);
-});
-
-app.put("/api/genres/:id", (req, res) => {
-  const genre = genres.find(c => c.id == req.params.id);
-  if (!genre) return res.status(404).send("genre by given id not found");
-
-  const { error } = validation(req.body);
-  if (error) return res.send(error.details[0].message);
-
-  genre.name = req.body.name;
-  res.send(genre);
-});
-
-app.delete("/api/genres/:id", (req, res) => {
-  const genre = genres.find(c => c.id == req.params.id);
-  if (!genre) return res.status(404).send("genre by given id not found");
-
-  genres.splice(parseInt(req.params.id) - 1, 1);
-  res.send(genre);
-});
-
-function validation(value) {
-  const schema = {
-    name: Joi.string()
-      .min(3)
-      .required()
-  };
-  return Joi.validate(value, schema);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+app.use(logger);
+app.use(auth);
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("tiny"));
+  debug("morgan is enabled... ");
 }
+app.use("/", home);
+app.use("/api/genres", genres);
+
+app.set("view engine", "pug");
+app.set("views", "./views");
 
 const port = process.env.PORT || 3000;
 
 app.listen(3000, () => {
-  console.log(`listening on port ${port}...`);
+  debug(`listening on port ${port}...`);
 });
