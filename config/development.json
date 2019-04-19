@@ -2,5 +2,8 @@
   "name": "vidly-application-Dev",
   "mail": {
     "host": "dev-server-host"
+  },
+  "database": {
+    "host": "mongodb://localhost/genres"
   }
 }

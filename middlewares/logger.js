@@ -1,7 +1,7 @@
-const debug = require("debug")("app:debug");
+const startUpdebug = require("debug")("app:startup");
 
 function logger(req, res, next) {
-  debug("Logging...");
+  startUpdebug("Logging...");
   next();
 }
 

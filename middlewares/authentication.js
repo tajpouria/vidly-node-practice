@@ -1,7 +1,7 @@
-const debug = require("debug")("app:debug");
+const startUpDebug = require("debug")("app:startup");
 
 function auth(req, res, next) {
-  debug("Aithenticating...");
+  startUpDebug("Authenticating...");
   next();
 }
 

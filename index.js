@@ -1,9 +1,10 @@
-const debug = require("debug")("app:debug");
 const config = require("config");
+const mongoose = require("mongoose");
+const dbDebug = require("debug")("app:db");
+const startUpDebug = require("debug")("app:startup");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const express = require("express");
-const Joi = require("joi");
 const app = express();
 const logger = require("./middlewares/logger");
 const auth = require("./middlewares/authentication");
@@ -16,9 +17,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(logger);
 app.use(auth);
+
+mongoose
+  .connect(config.get("database.host"), { useNewUrlParser: true })
+  .then(() => {
+    dbDebug("Connected to Mongodb..");
+  })
+  .catch(err => `Could not connect to db ${err.messge}`);
+
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("tiny"));
-  debug("morgan is enabled... ");
+  startUpDebug("morgan is enabled... ");
 }
 app.use("/", home);
 app.use("/api/genres", genres);
@@ -29,5 +38,5 @@ app.set("views", "./views");
 const port = process.env.PORT || 3000;
 
 app.listen(3000, () => {
-  debug(`listening on port ${port}...`);
+  startUpDebug(`listening on port ${port}...`);
 });
