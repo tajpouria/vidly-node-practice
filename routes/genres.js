@@ -1,25 +1,29 @@
-const Genre = require("../models/genre");
-const express = require("express");
+const Genre = require('../models/genre');
+const express = require('express');
 const router = express.Router();
-const Joi = require("joi");
+const Joi = require('joi');
 
-router.get("/", async (req, res) => {
-  const genres = await Genre.find()
-    .sort("name")
-    .select("name");
-  res.send(genres);
+router.get('/', async (req, res) => {
+  try {
+    const genres = await Genre.find()
+      .sort('name')
+      .select('name');
+    res.status(200).send(genres);
+  } catch (exception) {
+    res.status(404).send(exception.message);
+  }
 });
 
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const genre = await Genre.findById(req.params.id).select("name");
+    const genre = await Genre.findById(req.params.id).select('name');
     res.send(genre);
   } catch (exception) {
     res.status(404).send(exception.message);
   }
 });
 
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   const { error } = validation(req.body);
   if (error) return res.status(400).res.send(error.details[0].message);
 
@@ -32,12 +36,12 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   const { error } = validation(req.body);
   if (error) return res.status(400).res.send(error.details[0].message);
 
   try {
-    const genre = await Genre.findOneAndUpdate(
+    const result = await Genre.findOneAndUpdate(
       req.params.id,
       {
         $set: {
@@ -46,16 +50,16 @@ router.put("/:id", async (req, res) => {
       },
       { new: true }
     );
-    res.send(genre);
+    res.send(result);
   } catch (exception) {
     res.status(404).send(exception.message);
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
-    const genre = await Genre.findOneAndDelete({ _id: req.params.id });
-    res.status(200).send(genre);
+    const result = await Genre.findOneAndDelete({ _id: req.params.id });
+    res.status(200).send(result);
   } catch (exeption) {
     res.status(404).send(exeption.message);
   }

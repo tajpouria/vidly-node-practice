@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 module.exports = mongoose.model(
-  "Genre",
+  'Genre',
   new mongoose.Schema({
     name: {
       type: String,
