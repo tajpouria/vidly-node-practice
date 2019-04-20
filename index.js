@@ -11,6 +11,7 @@ const auth = require('./middlewares/authentication');
 const home = require('./routes/home');
 const genres = require('./routes/genres');
 const customers = require('./routes/customers');
+const movies = require('./routes/movies');
 
 app.use(helmet());
 app.use(express.json());
@@ -33,6 +34,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/', home);
 app.use('/api/genres', genres);
 app.use('/api/customers', customers);
+app.use('/api/movies', movies);
 
 app.set('view engine', 'pug');
 app.set('views', './views');

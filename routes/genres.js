@@ -14,12 +14,8 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-  try {
-    const genre = await Genre.findById(req.params.id).select('name');
-    res.send(genre);
-  } catch (exception) {
-    res.status(404).send(exception.message);
-  }
+  const genre = await Genre.findById(req.params.id).select('name');
+  res.send(genre);
 });
 
 router.post('/', async (req, res) => {

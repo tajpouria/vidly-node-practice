@@ -14,14 +14,10 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-  try {
-    const customer = await Customer.findById(req.params.id)
-      .sort('name')
-      .select('name phone isGold');
-    res.status(200).send(customer);
-  } catch (exception) {
-    res.status(404).send(exception.message);
-  }
+  const customer = await Customer.findById(req.params.id)
+    .sort('name')
+    .select('name phone isGold');
+  res.status(200).send(customer);
 });
 
 router.post('/', async (req, res) => {
