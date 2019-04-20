@@ -4,6 +4,6 @@
     "host": "dev-server-host"
   },
   "database": {
-    "host": "mongodb://localhost/genres"
+    "host": "mongodb://localhost/vidly"
   }
 }
