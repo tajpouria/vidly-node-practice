@@ -1,7 +1,6 @@
-const Genre = require('../models/genre');
+const { Genre, validation } = require('../models/genre');
 const express = require('express');
 const router = express.Router();
-const Joi = require('joi');
 
 router.get('/', async (req, res) => {
   try {
@@ -64,14 +63,5 @@ router.delete('/:id', async (req, res) => {
     res.status(404).send(exeption.message);
   }
 });
-
-function validation(value) {
-  const schema = {
-    name: Joi.string()
-      .min(3)
-      .required()
-  };
-  return Joi.validate(value, schema);
-}
 
 module.exports = router;

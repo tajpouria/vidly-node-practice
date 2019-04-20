@@ -1,7 +1,6 @@
-const Customer = require('../models/customer.js');
+const { Customer, validation } = require('../models/customer');
 const express = require('express');
 const router = express.Router();
-const Joi = require('joi');
 
 router.get('/', async (req, res) => {
   try {
@@ -70,20 +69,5 @@ router.delete('/:id', async (req, res) => {
     res.status(404).send(exception.message);
   }
 });
-
-function validation(value) {
-  const schema = {
-    name: Joi.string()
-      .min(3)
-      .max(255)
-      .required(),
-    phone: Joi.string()
-      .min(5)
-      .max(255)
-      .required(),
-    isGold: Joi.boolean()
-  };
-  return Joi.validate(value, schema);
-}
 
 module.exports = router;
