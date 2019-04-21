@@ -73,8 +73,8 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const movie = await Movie.findOneAndDelete({ _id: req.params.id });
-    res.status(200).send(`${movie} was deleted succesfully.`);
+    const result = await Movie.findOneAndDelete({ _id: req.params.id });
+    res.status(200).send(`${result} was deleted succesfully.`);
   } catch (exception) {
     res.status(404).send(exception.message);
   }

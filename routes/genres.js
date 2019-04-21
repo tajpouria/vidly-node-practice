@@ -3,14 +3,10 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  try {
-    const genres = await Genre.find()
-      .sort('name')
-      .select('name');
-    res.status(200).send(genres);
-  } catch (exception) {
-    res.status(404).send(exception.message);
-  }
+  const genres = await Genre.find()
+    .sort('name')
+    .select('name');
+  res.status(200).send(genres);
 });
 
 router.get('/:id', async (req, res) => {
