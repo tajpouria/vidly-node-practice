@@ -1,3 +1,5 @@
+const Joi = require('joi');
+Joi.objectId = require('joi-objectid')(Joi);
 const config = require('config');
 const mongoose = require('mongoose');
 const dbDebug = require('debug')('app:db');

@@ -65,49 +65,49 @@ router.post('/', async (req, res) => {
   }
 });
 
-// router.put('/:id', async (req, res) => {
-//   const { error } = validation(req.body);
-//   if (error) return res.status(400).send(error.details[0].message);
+router.put('/:id', async (req, res) => {
+  const { error } = validation(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
 
-//   try {
-//     const customer = await Customer.findById(req.body.customerId);
+  try {
+    const customer = await Customer.findById(req.body.customerId);
 
-//     const movie = await Movie.findById(req.body.movieId);
-//     if (movie.numberInStock === 0)
-//       return res.status(400).send("Sorry we don't have movie in our stock!");
+    const movie = await Movie.findById(req.body.movieId);
+    if (movie.numberInStock === 0)
+      return res.status(400).send("Sorry we don't have movie in our stock!");
 
-//     const rental = await Rental.findById(req.params.id);
+    const rental = await Rental.findById(req.params.id);
 
-//     rental.set({
-//       customer: {
-//         _id: customer._id,
-//         name: customer.name,
-//         isGold: customer.isGold,
-//         phone: customer.phone
-//       },
-//       movie: {
-//         _id: movie._id,
-//         title: movie.title,
-//         dailyRentalRate: movie.dailyRentalRate
-//       },
-//       dateout: req.body.dateOut,
-//       dateReturned: req.body.dateReturned
-//     });
+    rental.set({
+      customer: {
+        _id: customer._id,
+        name: customer.name,
+        isGold: customer.isGold,
+        phone: customer.phone
+      },
+      movie: {
+        _id: movie._id,
+        title: movie.title,
+        dailyRentalRate: movie.dailyRentalRate
+      },
+      dateout: req.body.dateOut,
+      dateReturned: req.body.dateReturned
+    });
 
-//     try {
-//       new Fawn.Task()
-//         .shouldUpdateNumberInStock(req.params.id, movie._id)
-//         .then(res => res)
-//         .save('rentals'.rental)
-//         .run();
-//     } catch (exception) {
-//       res.status(500).send(exception.message);
-//     }
-//     res.status(200).send(rental);
-//   } catch (exception) {
-//     res.status(404).send(exception.message);
-//   }
-// });
+    try {
+      new Fawn.Task()
+        .shouldUpdateNumberInStock(req.params.id, movie._id)
+        .then(res => res)
+        .save('rentals'.rental)
+        .run();
+    } catch (exception) {
+      res.status(500).send(exception.message);
+    }
+    res.status(200).send(rental);
+  } catch (exception) {
+    res.status(404).send(exception.message);
+  }
+});
 
 router.delete('/:id', async (req, res) => {
   try {

@@ -37,7 +37,7 @@ function validation(value) {
       .min(3)
       .max(255)
       .required(),
-    genreId: Joi.string()
+    genreId: Joi.objectId()
       .min(3)
       .max(255)
       .required(),
