@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "config": "^3.0.1",
     "debug": "^4.1.1",
     "express": "^4.16.4",
@@ -17,6 +18,9 @@
     "helmet": "^3.16.0",
     "joi": "^14.3.1",
     "joi-objectid": "^2.0.0",
+    "joi-password-complexity": "^2.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
     "mongoose": "^5.5.2",
     "morgan": "^1.9.1",
     "pug": "^2.0.3"

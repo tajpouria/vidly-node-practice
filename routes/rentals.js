@@ -1,3 +1,5 @@
+const admin = require('../middlewares/admin');
+const authorization = require('../middlewares/authorization');
 const Fawn = require('fawn');
 const mongoose = require('mongoose');
 const { Movie } = require('../models/movie');
@@ -23,7 +25,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', authorization, async (req, res) => {
   const { error } = validation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -64,7 +66,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', [authorization, admin], async (req, res) => {
   try {
     const result = await Rental.findOneAndDelete({ _id: req.params.id });
     res.status(200).send(`${result} was deleted succesfully`);

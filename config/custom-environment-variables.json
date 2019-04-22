@@ -1,4 +1,5 @@
 {
+  "jwtPrivateKey": "vidly_jwtPrivateKey",
   "mail": {
     "password": "app_password"
   }

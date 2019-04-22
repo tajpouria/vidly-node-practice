@@ -1,3 +1,6 @@
+const admin = require('../middlewares/admin');
+const authorization = require('../middlewares/authorization');
+const _ = require('lodash');
 const { Customer, validation } = require('../models/customer');
 const express = require('express');
 const router = express.Router();
@@ -20,34 +23,32 @@ router.get('/:id', async (req, res) => {
   res.status(200).send(customer);
 });
 
-router.post('/', async (req, res) => {
+router.post('/', authorization, async (req, res) => {
   const { error } = validation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
   try {
-    const { name, phone, isGold } = req.body;
-    const customer = new Customer({ name, phone, isGold });
-    const result = await customer.save();
-    res.status(200).send(`${result} was created succesfully`);
+    const customer = new Customer(_.pick(req.body), [
+      'name',
+      'phone',
+      'isGold'
+    ]);
+    await customer.save();
+    res.status(200).send(`${customer} was created succesfully`);
   } catch (exception) {
     res.status(404).send(exception.message);
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', authorization, async (req, res) => {
   const { error } = validation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
   try {
-    const { name, phone, isGold = false } = req.body;
     const result = await Customer.findOneAndUpdate(
       { _id: req.params.id },
       {
-        $set: {
-          name,
-          phone,
-          isGold
-        }
+        $set: _.pick(req.body, ['name', 'phone', 'isGold'])
       },
       { new: true }
     );
@@ -57,7 +58,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', [authorization, admin], async (req, res) => {
   try {
     const result = await Customer.findOneAndDelete({ _id: req.params.id });
     res.status(200).send(result);
