@@ -1,0 +1,20 @@
+{"level":"error","message":"failed to reconnect after 30 attempts with interval 1000 ms","timestamp":"2019-04-24T16:51:45.229Z"}
+{"message":"failed to reconnect after 30 attempts with interval 1000 ms","stack":"MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms\n    at connect (/home/lenovo/Desktop/vidly/node_modules/mongodb-core/lib/connection/pool.js:308:13)\n    at makeConnection (/home/lenovo/Desktop/vidly/node_modules/mongodb-core/lib/connection/connect.js:38:11)\n    at callback (/home/lenovo/Desktop/vidly/node_modules/mongodb-core/lib/connection/connect.js:260:5)\n    at Socket.err (/home/lenovo/Desktop/vidly/node_modules/mongodb-core/lib/connection/connect.js:286:7)\n    at Object.onceWrapper (events.js:285:13)\n    at Socket.emit (events.js:197:13)\n    at emitErrorNT (internal/streams/destroy.js:82:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)\n    at processTicksAndRejections (internal/process/next_tick.js:76:17)","name":"MongoNetworkError","errorLabels":["TransientTransactionError"],"level":"error","timestamp":"2019-04-24T16:52:56.553Z"}
+{"message":"failed to reconnect after 30 attempts with interval 1000 ms","stack":"MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms\n    at connect (/home/lenovo/Desktop/vidly/node_modules/mongodb-core/lib/connection/pool.js:308:13)\n    at makeConnection (/home/lenovo/Desktop/vidly/node_modules/mongodb-core/lib/connection/connect.js:38:11)\n    at callback (/home/lenovo/Desktop/vidly/node_modules/mongodb-core/lib/connection/connect.js:260:5)\n    at Socket.err (/home/lenovo/Desktop/vidly/node_modules/mongodb-core/lib/connection/connect.js:286:7)\n    at Object.onceWrapper (events.js:285:13)\n    at Socket.emit (events.js:197:13)\n    at emitErrorNT (internal/streams/destroy.js:82:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)\n    at processTicksAndRejections (internal/process/next_tick.js:76:17)","name":"MongoNetworkError","errorLabels":["TransientTransactionError"],"level":"error","timestamp":"2019-04-24T17:03:34.169Z"}
+{"level":"error","message":"","timestamp":"2019-04-24T17:08:39.684Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T17:43:16.817Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T17:48:50.715Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T17:50:43.844Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T17:50:45.668Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T17:51:02.702Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T17:56:30.438Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T18:02:39.426Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T18:05:38.725Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T18:06:02.854Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T18:06:56.301Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T18:07:35.025Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T18:07:45.944Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T18:08:23.914Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T18:11:04.759Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T18:13:44.974Z"}
+{"level":"info","message":"Connected to Mongodb..","timestamp":"2019-04-24T18:13:57.169Z"}
