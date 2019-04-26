@@ -633,3 +633,174 @@
 {"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T15:08:54.031Z"}
 {"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T15:08:54.083Z"}
 {"message":"Cannot read property 'password' of undefined","stack":"TypeError: Cannot read property 'password' of undefined\n    at router.post (/home/lenovo/Desktop/vidly/routes/users.js:15:57)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:317:13)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:635:15\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:260:14)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)","level":"error","timestamp":"2019-04-26T15:09:21.417Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T17:42:49.600Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T17:43:20.245Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T17:43:20.277Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T17:47:45.828Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T17:47:45.859Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T17:49:25.456Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T17:49:25.491Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:01:51.526Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:01:51.566Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:03:37.973Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:03:38.027Z"}
+{"message":"Cannot read property 'password' of undefined","stack":"TypeError: Cannot read property 'password' of undefined\n    at router.post (/home/lenovo/Desktop/vidly/routes/users.js:16:57)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:317:13)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:635:15\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:260:14)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)","level":"error","timestamp":"2019-04-26T18:05:06.869Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:06:15.046Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:06:15.080Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:17:01.574Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:17:01.626Z"}
+{"message":"Cannot read property 'password' of undefined","stack":"TypeError: Cannot read property 'password' of undefined\n    at router.post (/home/lenovo/Desktop/vidly/routes/users.js:15:57)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:317:13)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:635:15\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:260:14)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)","level":"error","timestamp":"2019-04-26T18:17:06.069Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:18:46.707Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:18:46.760Z"}
+{"message":"Cannot read property 'password' of undefined","stack":"TypeError: Cannot read property 'password' of undefined\n    at router.post (/home/lenovo/Desktop/vidly/routes/users.js:15:57)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:317:13)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:635:15\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:260:14)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)","level":"error","timestamp":"2019-04-26T18:19:42.692Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:21:07.760Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:21:07.799Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:21:54.150Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:21:54.193Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:23:18.820Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:23:18.857Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:25:34.216Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:25:34.249Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:28:02.913Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:28:02.950Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:33:15.208Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:33:15.272Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:36:18.180Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:36:18.242Z"}
+{"message":"Cannot read property 'password' of undefined","stack":"TypeError: Cannot read property 'password' of undefined\n    at router.post (/home/lenovo/Desktop/vidly/routes/users.js:15:57)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:112:3)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:317:13)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:635:15\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:260:14)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)","level":"error","timestamp":"2019-04-26T18:36:39.827Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:36:54.272Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:36:54.335Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:37:08.197Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:37:08.318Z"}
+{"message":"Cannot read property 'password' of undefined","stack":"TypeError: Cannot read property 'password' of undefined\n    at router.post (/home/lenovo/Desktop/vidly/routes/users.js:15:57)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:317:13)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:635:15\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:260:14)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)","level":"error","timestamp":"2019-04-26T18:37:09.204Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:37:12.793Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:37:12.871Z"}
+{"message":"Cannot read property 'password' of undefined","stack":"TypeError: Cannot read property 'password' of undefined\n    at router.post (/home/lenovo/Desktop/vidly/routes/users.js:15:57)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/route.js:112:3)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)\n    at newFn (/home/lenovo/Desktop/vidly/node_modules/express-async-errors/index.js:16:20)\n    at Layer.handle [as handle_request] (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:317:13)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:284:7\n    at Function.process_params (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:275:10)\n    at /home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:635:15\n    at next (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:260:14)\n    at Function.handle (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/lenovo/Desktop/vidly/node_modules/express/lib/router/index.js:47:12)","level":"error","timestamp":"2019-04-26T18:37:15.258Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:38:41.791Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:38:41.849Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:39:05.396Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:39:05.500Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:39:11.631Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-04-26T18:39:11.709Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:40:28.418Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:40:28.495Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:40:53.399Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:40:53.470Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:41:26.928Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:41:26.962Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:46:49.883Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:46:49.917Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:47:05.634Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:47:05.669Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:47:19.896Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:47:19.931Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:47:30.055Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:47:30.088Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:47:50.633Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:47:50.668Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:48:09.407Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:48:09.441Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:49:50.145Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:49:50.180Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:49:55.724Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:49:55.760Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:50:23.635Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:50:23.669Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:50:45.582Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:50:45.617Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:50:54.240Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:50:54.274Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T18:51:10.581Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T18:51:10.616Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:13:10.060Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:13:10.096Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:15:42.186Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:15:42.220Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:16:04.283Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:16:04.318Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:16:13.261Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:16:13.296Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:17:08.977Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:17:09.011Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:17:38.483Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:17:38.516Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:23:22.569Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:23:22.604Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:23:35.896Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:23:35.930Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:25:48.432Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:25:48.465Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:26:39.260Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:26:39.294Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:26:53.257Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:26:53.290Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:27:03.715Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:27:03.748Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:27:44.895Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:27:44.933Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:28:07.428Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:28:07.461Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:28:49.624Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:28:49.661Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:29:19.805Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:29:19.839Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:30:41.349Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:30:41.383Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:34:24.874Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:34:24.908Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:35:21.449Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:35:21.483Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:35:43.583Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:35:43.616Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:35:45.838Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:35:45.872Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:35:59.486Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:35:59.519Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:38:14.204Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:38:14.239Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:38:17.466Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:38:17.500Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:39:31.404Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:39:31.439Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:40:37.891Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:40:37.926Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:40:48.508Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:40:48.542Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:43:13.669Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:43:13.720Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:43:33.900Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:43:33.951Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:44:31.498Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:44:31.532Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:45:03.609Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:45:03.643Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:45:10.580Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:45:10.614Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:45:51.497Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:45:51.545Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:47:11.115Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:47:11.164Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:49:29.648Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:49:29.700Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:49:31.497Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:49:31.530Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:50:05.718Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:50:05.751Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:51:08.545Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:51:08.579Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:52:15.802Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:52:15.835Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:52:54.606Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:52:54.641Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:52:56.727Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:52:56.762Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:55:24.048Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:55:24.082Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:55:45.267Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:55:45.300Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:56:34.940Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:56:34.976Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:56:37.806Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:56:37.840Z"}
+{"level":"info","message":"listening on port 3000...","timestamp":"2019-04-26T19:56:50.366Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly-test","timestamp":"2019-04-26T19:56:50.400Z"}

@@ -4,9 +4,9 @@ const app = express();
 
 require('./startup/config')();
 require('./startup/logger')();
+require('./startup/middlewares')(app);
 require('./startup/routes')(app);
 require('./startup/db')();
-require('./startup/middlewares')(app);
 require('./startup/validation')();
 require('./startup/views')(app);
 

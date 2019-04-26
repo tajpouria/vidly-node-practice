@@ -26,8 +26,8 @@ router.post('/', authorization, async (req, res) => {
 
   try {
     const genre = new Genre({ name: req.body.name });
-    const result = await genre.save();
-    res.send(`${result} was created succesfully!`);
+    await genre.save();
+    res.send(genre);
   } catch (exception) {
     res.send(exception.message);
   }

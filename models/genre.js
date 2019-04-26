@@ -6,7 +6,7 @@ const genreSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 5,
-    maxlength: 255,
+    maxlength: 50,
     unique: true
   }
 });
@@ -17,7 +17,7 @@ function validation(value) {
   const schema = {
     name: Joi.string()
       .min(5)
-      .max(255)
+      .max(50)
       .required()
   };
   return Joi.validate(value, schema);
