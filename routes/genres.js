@@ -1,3 +1,4 @@
+const notFound = require('../middlewares/notFound');
 const admin = require('../middlewares/admin');
 const authorization = require('../middlewares/authorization');
 const { Genre, validation } = require('../models/genre');
@@ -11,10 +12,13 @@ router.get('/', async (req, res) => {
   res.status(200).send(genres);
 });
 
-router.get('/:id', async (req, res) => {
-  const genre = await Genre.findById(req.params.id).select('name');
-  res.send(genre);
-});
+router.get(
+  '/:id',
+  notFound(async (req, res) => {
+    const genre = await Genre.findById(req.params.id).select('name');
+    res.send(genre);
+  })
+);
 
 router.post('/', authorization, async (req, res) => {
   const { error } = validation(req.body);

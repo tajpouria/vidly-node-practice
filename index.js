@@ -1,4 +1,4 @@
-const startUpDebug = require('debug')('app:startUpDebug');
+const winston = require('winston');
 const express = require('express');
 const app = express();
 
@@ -12,6 +12,6 @@ require('./startup/views')(app);
 
 const port = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-  startUpDebug(`listening on port ${port}...`);
+module.exports = app.listen(port, () => {
+  winston.info(`listening on port ${port}...`);
 });

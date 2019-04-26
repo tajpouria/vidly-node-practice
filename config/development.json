@@ -3,7 +3,5 @@
   "mail": {
     "host": "dev-server-host"
   },
-  "database": {
-    "host": "mongodb://localhost/vidly"
-  }
+  "database": "mongodb://localhost/vidly"
 }

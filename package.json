@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll --verbose "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/jest": "^24.0.11",
     "bcrypt": "^3.0.6",
     "config": "^3.0.1",
     "debug": "^4.1.1",
@@ -29,6 +30,8 @@
     "winston-mongodb": "^3.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^5.16.0",
+    "jest": "^24.7.1",
+    "supertest": "^4.0.2"
   }
 }
