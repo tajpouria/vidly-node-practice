@@ -37,29 +37,25 @@ router.put('/:id', authorization, async (req, res) => {
   const { error } = validation(req.body);
   if (error) return res.status(400).res.send(error.details[0].message);
 
-  try {
-    const result = await Genre.findOneAndUpdate(
-      req.params.id,
-      {
-        $set: {
-          name: req.body.name
-        }
-      },
-      { new: true }
-    );
-    res.send(result);
-  } catch (exception) {
-    res.status(404).send(exception.message);
-  }
+  const result = await Genre.findOneAndUpdate(
+    req.params.id,
+    {
+      $set: {
+        name: req.body.name
+      }
+    },
+    { new: true }
+  );
+  res.send(result);
 });
 
-router.delete('/:id', [authorization, admin], async (req, res) => {
-  try {
+router.delete(
+  '/:id',
+  [authorization, admin],
+  notFound(async (req, res) => {
     const result = await Genre.findOneAndDelete({ _id: req.params.id });
     res.status(200).send(result);
-  } catch (exeption) {
-    res.status(404).send(exeption.message);
-  }
-});
+  })
+);
 
 module.exports = router;
