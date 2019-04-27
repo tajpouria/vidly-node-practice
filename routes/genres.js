@@ -12,13 +12,14 @@ router.get('/', async (req, res) => {
   res.status(200).send(genres);
 });
 
-router.get(
-  '/:id',
-  notFound(async (req, res) => {
+router.get('/:id', async (req, res) => {
+  try {
     const genre = await Genre.findById(req.params.id).select('name');
     res.send(genre);
-  })
-);
+  } catch (ex) {
+    res.status(404).send(notFound);
+  }
+});
 
 router.post('/', authorization, async (req, res) => {
   const { error } = validation(req.body);
@@ -35,27 +36,30 @@ router.post('/', authorization, async (req, res) => {
 
 router.put('/:id', authorization, async (req, res) => {
   const { error } = validation(req.body);
-  if (error) return res.status(400).res.send(error.details[0].message);
-
-  const result = await Genre.findOneAndUpdate(
-    req.params.id,
-    {
-      $set: {
-        name: req.body.name
-      }
-    },
-    { new: true }
-  );
-  res.send(result);
+  if (error) return res.status(400).send(error.details[0].message);
+  try {
+    const genre = await Genre.findOneAndUpdate(
+      { _id: req.params.id },
+      {
+        $set: {
+          name: req.body.name
+        }
+      },
+      { new: true }
+    );
+    res.send(genre);
+  } catch (ex) {
+    res.status(404).send('not found');
+  }
 });
 
-router.delete(
-  '/:id',
-  [authorization, admin],
-  notFound(async (req, res) => {
-    const result = await Genre.findOneAndDelete({ _id: req.params.id });
-    res.status(200).send(result);
-  })
-);
+router.delete('/:id', [authorization, admin], async (req, res) => {
+  try {
+    const genre = await Genre.findOneAndDelete({ _id: req.params.id });
+    res.status(200).send(genre);
+  } catch (ex) {
+    res.status(404).send('not found');
+  }
+});
 
 module.exports = router;

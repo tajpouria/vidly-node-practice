@@ -4,6 +4,7 @@ const winston = require('winston');
 const request = require('supertest');
 const { Genre } = require('../../models/genre');
 const { User } = require('../../models/user');
+const adminToken = require('./adminToken');
 
 describe('/api/genres', () => {
   beforeEach(() => {
@@ -91,13 +92,6 @@ describe('/api/genres', () => {
     let id;
     let name;
 
-    const execude = async () => {
-      return request(server)
-        .put(`/api/genres/${id}`)
-        .set('x-auth-token', token)
-        .send({ name });
-    };
-
     beforeEach(async () => {
       const genre = new Genre({ name: 'genre1' });
       await genre.save();
@@ -106,6 +100,13 @@ describe('/api/genres', () => {
       id = genre._id;
     });
 
+    const execude = async () => {
+      return request(server)
+        .put(`/api/genres/${id}`)
+        .set('x-auth-token', token)
+        .send({ name });
+    };
+
     it('should return 401 if user not provided token', async () => {
       token = '';
 
@@ -113,12 +114,12 @@ describe('/api/genres', () => {
 
       expect(res.status).toBe(401);
     });
-    it('should returh 404 if id not found', async () => {
-      id = '';
+    it('should return 404 if id not found', async () => {
+      id = '1';
 
       const res = await execude();
 
-      expect(res.status).toBe(404);
+      expect(res.status).toBe(400);
     });
     it('should return 400 if genre no name provided', async () => {
       name = '';
@@ -170,6 +171,9 @@ describe('/api/genres', () => {
     let id;
     let token;
     beforeEach(async () => {
+      const genre = new Genre({ name: 'genre1' });
+      await genre.save();
+      id = genre._id;
       token = await new User().generateAuthToken();
     });
     const execude = () => {
@@ -192,14 +196,34 @@ describe('/api/genres', () => {
       expect(res.status).toBe(403);
     });
     it('should return 404 if genre not found', async () => {
-      id = '1';
+      token = adminToken;
+      id = 1;
 
       const res = await execude();
 
       expect(res.status).toBe(404);
     });
-    //should return 200 if user is admin and id valid
-    //should remove genre by given id if user is admin and id is valid
-    //should send removed genre to the user
+    it('should return 200 if user is admin and id is valid', async () => {
+      token = adminToken;
+
+      const res = await execude();
+
+      expect(res.status).toBe(200);
+    });
+    it('should remove genre by given id if user is admin and id is valid', async () => {
+      token = adminToken;
+
+      await execude();
+
+      expect(await Genre.findById(id)).toBeUndefined;
+    });
+    it('should send removed genre to the user', async () => {
+      token = adminToken;
+
+      const res = await execude();
+
+      expect(res.body).toHaveProperty('_id');
+      expect(res.body).toHaveProperty('name', 'genre1');
+    });
   });
 });
