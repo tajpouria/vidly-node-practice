@@ -1,10 +1,10 @@
 {
   "name": "vidly",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple rental movie backEnd services based on jsonWebToken.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --verbose "
+    "test": "jest --watchAll --verbose"
   },
   "keywords": [],
   "author": "",

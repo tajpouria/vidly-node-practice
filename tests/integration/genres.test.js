@@ -10,7 +10,7 @@ describe('/api/genres', () => {
     server = require('../../index');
   });
   afterEach(async () => {
-    await server.close();
+    server.close();
     await Genre.deleteMany({});
   });
   describe('GET /', () => {
@@ -43,6 +43,10 @@ describe('/api/genres', () => {
     let token;
     let genre;
 
+    beforeEach(async () => {
+      token = await new User().generateAuthToken();
+    });
+
     const execude = async () => {
       return await request(server)
         .post('/api/genres')
@@ -56,21 +60,18 @@ describe('/api/genres', () => {
       expect(res.status).toBe(401);
     });
     it('Should return 400 when genre name is less than 5 character', async () => {
-      token = await new User().generateAuthToken();
       genre = '1234';
       const res = await execude();
 
       expect(res.status).toBe(400);
     });
     it('Should return 400 when genre name is more than 50 character', async () => {
-      token = await new User().generateAuthToken();
       genre = new Array(52).join('a');
       const res = await execude();
 
       expect(res.status).toBe(400);
     });
     it('Should save the genres req is valid', async () => {
-      token = await new User().generateAuthToken();
       genre = 'genre1';
       const res = await execude();
 
@@ -78,7 +79,6 @@ describe('/api/genres', () => {
       expect(await Genre.findOne({ name: 'genre1' })).not.toBeNull();
     });
     it('Should return genre if req is valid', async () => {
-      token = await new User().generateAuthToken();
       const res = await execude();
 
       expect(res.status).toBe(200);
