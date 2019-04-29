@@ -21,39 +21,32 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', [authorization, validator(validation)], async (req, res) => {
-  try {
-    const genre = new Genre({ name: req.body.name });
-    await genre.save();
-    res.send(genre);
-  } catch (exception) {
-    res.send(exception.message);
-  }
+  const genre = new Genre({ name: req.body.name });
+  await genre.save();
+  res.send(genre);
 });
 
 router.put('/:id', [authorization, validator(validation)], async (req, res) => {
-  try {
-    const genre = await Genre.findOneAndUpdate(
-      { _id: req.params.id },
-      {
-        $set: {
-          name: req.body.name
-        }
-      },
-      { new: true }
-    );
-    res.send(genre);
-  } catch (ex) {
-    res.status(404).send('not found');
-  }
+  await Genre.findOneAndUpdate(
+    { _id: req.params.id },
+    {
+      $set: {
+        name: req.body.name
+      }
+    },
+    { new: true },
+    (err, doc) => {
+      if (err) return res.status(400);
+      res.send(doc);
+    }
+  );
 });
 
 router.delete('/:id', [authorization, admin], async (req, res) => {
-  try {
-    const genre = await Genre.findOneAndDelete({ _id: req.params.id });
-    res.status(200).send(genre);
-  } catch (ex) {
-    res.status(404).send('not found');
-  }
+  await Genre.findOneAndDelete({ _id: req.params.id }, (err, doc) => {
+    if (err) return res.status(404);
+    res.send(doc);
+  });
 });
 
 module.exports = router;

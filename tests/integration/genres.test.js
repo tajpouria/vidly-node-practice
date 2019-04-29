@@ -114,7 +114,7 @@ describe('/api/genres', () => {
 
       expect(res.status).toBe(401);
     });
-    it('should return 404 if id not found', async () => {
+    it('should return 400 if id not found', async () => {
       id = '1';
 
       const res = await execude();
