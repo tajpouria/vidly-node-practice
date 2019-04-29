@@ -14,5 +14,6 @@ module.exports = function(app) {
     app.use(morgan('tiny'));
     startUpDebug('morgan is enabled... ');
   }
+
   app.use(errorMiddleware);
 };

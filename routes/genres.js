@@ -1,9 +1,9 @@
-const notFound = require('../middlewares/notFound');
 const admin = require('../middlewares/admin');
 const authorization = require('../middlewares/authorization');
 const { Genre, validation } = require('../models/genre');
 const express = require('express');
 const router = express.Router();
+const validator = require('../middlewares/validator');
 
 router.get('/', async (req, res) => {
   const genres = await Genre.find()
@@ -13,18 +13,14 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-  try {
-    const genre = await Genre.findById(req.params.id).select('name');
-    res.send(genre);
-  } catch (ex) {
-    res.status(404).send(notFound);
-  }
+  const genre = await Genre.findById(req.params.id, error => {
+    if (error) return res.status(404).send('not found');
+  }).select('name');
+
+  res.status(200).send(genre);
 });
 
-router.post('/', authorization, async (req, res) => {
-  const { error } = validation(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-
+router.post('/', [authorization, validator(validation)], async (req, res) => {
   try {
     const genre = new Genre({ name: req.body.name });
     await genre.save();
@@ -34,9 +30,7 @@ router.post('/', authorization, async (req, res) => {
   }
 });
 
-router.put('/:id', authorization, async (req, res) => {
-  const { error } = validation(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+router.put('/:id', [authorization, validator(validation)], async (req, res) => {
   try {
     const genre = await Genre.findOneAndUpdate(
       { _id: req.params.id },

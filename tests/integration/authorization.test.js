@@ -8,7 +8,7 @@ describe('authorization-integration', () => {
   beforeEach(() => {
     server = require('../../index');
   });
-  afterEach(() => {
+  afterEach(async () => {
     server.close();
   });
 
