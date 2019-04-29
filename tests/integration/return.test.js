@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const moment = require('moment');
 const mongoose = require('mongoose');
 const request = require('supertest');

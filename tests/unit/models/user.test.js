@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const { User } = require('../../../models/user');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');

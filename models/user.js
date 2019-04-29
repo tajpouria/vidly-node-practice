@@ -18,8 +18,7 @@ const userSchema = new mongoose.Schema({
     maxlength: 255,
     required: true,
     lowercase: true,
-    unique: true,
-    match: /^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail|yahoo|hotmail|outlook|mac|msn)\.com$/i
+    unique: true
   },
   password: {
     type: String,

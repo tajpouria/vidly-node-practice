@@ -3,7 +3,8 @@
     "node": 1,
     "browser": true,
     "commonjs": true,
-    "es6": true
+    "es6": true,
+    "jest/globals": true
   },
   "extends": "eslint:recommended",
   "globals": {
@@ -16,5 +17,6 @@
   },
   "rules": {
     "eqeqeq": 1
-  }
+  },
+  "plugins": ["jest"]
 }
