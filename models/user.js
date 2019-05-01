@@ -47,7 +47,8 @@ function validation(value) {
       .min(10)
       .max(255)
       .email()
-      .required()
+      .required(),
+    password: Joi.string().required()
   };
   return Joi.validate(value, schema);
 }

@@ -1,7 +1,6 @@
-module.exports = validation => {
+module.exports = function(passValidation) {
   return (req, res, next) => {
-    debugger;
-    const { error } = validation(req.body);
+    const { error } = passValidation(req.body.password);
     if (error) return res.status(400).send(error.details[0].message);
 
     next();

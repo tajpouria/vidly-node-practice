@@ -3,34 +3,59 @@ const adminToken = require('./adminToken');
 const { User } = require('../../models/user');
 
 describe('/api/users', () => {
+  let server;
+  let token;
+  let name;
+  let email;
+  let password;
+  beforeEach(() => {
+    server = require('../../index');
+
+    token = adminToken;
+    name = '123';
+    email = 'email@gmail.com';
+    password = 'a123456B';
+  });
+
+  const execute = () => {
+    return request(server)
+      .post('/api/users')
+      .set('x-auth-token', token)
+      .send({ name, email, password });
+  };
+
+  afterEach(async () => {
+    server.close();
+
+    await User.deleteMany({});
+  });
+
+  describe('GET/me', () => {
+    it('should return 401 if no token provided', async () => {
+      token = '';
+
+      const res = await execute();
+
+      expect(res.status).toBe(401);
+    });
+
+    it('should return 200 if request is valid', async () => {
+      const res = await execute();
+
+      expect(res.status).toBe(200);
+    });
+
+    it('should send user if request is valid', async () => {
+      const res = await execute();
+
+      expect(res.body).toMatchObject({
+        email: '123',
+        email: 'email@gmail.com'
+      });
+    });
+  });
+
   describe('POST/', () => {
-    let server;
-    let token;
-    let name;
-    let email;
-    let password;
-    beforeEach(() => {
-      server = require('../../index');
-
-      token = adminToken;
-      name = '123';
-      email = 'email@gmail.com';
-      password = 'a123456B';
-    });
-
-    const execute = () => {
-      return request(server)
-        .post('/api/users')
-        .set('x-auth-token', token)
-        .send({ name, email, password });
-    };
-
-    afterEach(async () => {
-      server.close();
-
-      await User.deleteMany({});
-    });
-
     it('should return 401 if not token provided', async () => {
       token = '';
 
