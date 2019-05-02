@@ -49,7 +49,7 @@ describe('/api/users', () => {
       const res = await execute();
 
       expect(res.body).toMatchObject({
-        email: '123',
+        name: '123',
         email: 'email@gmail.com'
       });
     });
