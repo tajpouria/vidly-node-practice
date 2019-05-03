@@ -6,11 +6,9 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  res.send(
-    await Movie.find()
-      .sort('title')
-      .select('title genre numberInStock dailyRentalRate')
-  );
+  await Movie.find({}, (err, doc) => {
+    res.send(doc);
+  }).sort('title');
 });
 
 router.get('/:id', async (req, res) => {

@@ -15,7 +15,6 @@ describe('/api/rentals', () => {
   let rentalId;
   let customerId;
   let movieId;
-  let numberInStock;
 
   beforeEach(async () => {
     server = require('../../index');
@@ -148,6 +147,10 @@ describe('/api/rentals', () => {
   });
 
   describe('POST/', () => {
+    beforeEach(async () => {
+      await Rental.deleteMany({});
+    });
+
     const execute = () => {
       return request(server)
         .post(`/api/rentals`)
@@ -196,13 +199,10 @@ describe('/api/rentals', () => {
       expect(res.status).toBe(200);
     });
     it('should save rental in db if request is valid', async () => {
-      await Rental.deleteMany({});
-
       await execute();
-      const rental = await Rental.findById(rentalId);
-      console.log(rental);
 
-      expect(rental).toBeDefined();
+      const rental = await Rental.find();
+      expect(rental.length).not.toEqual(0);
     });
 
     it('should decrease movie number in stock if request is valid', async () => {

@@ -1,15 +1,15 @@
 const admin = require('../middlewares/admin');
 const authorization = require('../middlewares/authorization');
-const Fawn = require('fawn');
-const mongoose = require('mongoose');
+// const Fawn = require('fawn');
+// const mongoose = require('mongoose');
 const { Movie } = require('../models/movie');
 const { Customer } = require('../models/customer');
 const { Rental } = require('../models/rental');
 const express = require('express');
 const router = express.Router();
 
-Fawn.init(mongoose);
-let task = Fawn.Task();
+// Fawn.init(mongoose);
+// let task = Fawn.Task();
 
 router.get('/', authorization, async (req, res) => {
   await Rental.find({}, (err, doc) => {
@@ -55,9 +55,17 @@ router.post('/', authorization, async (req, res) => {
       dailyRentalRate: movie.dailyRentalRate
     }
   });
-  try {
-    await rental.save();
 
+  try {
+    // task
+    //   .save('rentals', rental)
+    //   .update('movies', { _id: movie._id }, { $inc: { numberInStock: -1 } })
+    //   .run();
+    await rental.save();
+    await Movie.findOneAndUpdate(
+      { _id: movie._id },
+      { $inc: { numberInStock: -1 } }
+    );
     res.send(rental);
   } catch (exception) {
     res.status(500).send(exception.message);
