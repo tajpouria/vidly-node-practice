@@ -9,6 +9,7 @@ require('./startup/routes')(app);
 require('./startup/db')();
 require('./startup/validation')();
 require('./startup/views')(app);
+require('./startup/prod')(app);
 
 const port = process.env.PORT || 3000;
 
