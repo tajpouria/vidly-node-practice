@@ -3,10 +3,10 @@
   "header": {
     "event": "Allocation failed - JavaScript heap out of memory",
     "location": "OnFatalError",
-    "filename": "report.20190502.193354.14365.001.json",
-    "dumpEventTime": "2019-05-02T19:33:54Z",
-    "dumpEventTimeStamp": "1556809434842",
-    "processId": 14365,
+    "filename": "report.20190504.155626.11960.001.json",
+    "dumpEventTime": "2019-05-04T15:56:26Z",
+    "dumpEventTimeStamp": "1556969186309",
+    "processId": 11960,
     "commandLine": [
       "node",
       "/home/lenovo/Desktop/vidly/node_modules/.bin/jest",
@@ -101,15 +101,15 @@
       "symbol": "v8::internal::Runtime_AllocateInNewSpace(int, v8::internal::Object**, v8::internal::Isolate*) [node]"
     },
     {
-      "pc": "0x0000334a163cfc5d",
+      "pc": "0x000027b0a8a4fc5d",
       "symbol": ""
     }
   ],
   "javascriptHeap": {
-    "totalMemory": 1498599424,
-    "totalCommittedMemory": 1493461344,
-    "usedMemory": 1408920512,
-    "availableMemory": 30934240,
+    "totalMemory": 1499271168,
+    "totalCommittedMemory": 1494018416,
+    "usedMemory": 1421245024,
+    "availableMemory": 31943904,
     "memoryLimit": 1526909922,
     "heapSpaces": {
       "read_only_space": {
@@ -121,38 +121,38 @@
       },
       "new_space": {
         "memorySize": 4194304,
-        "committedMemory": 923648,
+        "committedMemory": 1186336,
         "capacity": 2062336,
-        "used": 294928,
-        "available": 1767408
+        "used": 306200,
+        "available": 1756136
       },
       "old_space": {
-        "memorySize": 1350242304,
-        "committedMemory": 1349662048,
-        "capacity": 1281524360,
-        "used": 1280958120,
-        "available": 566240
+        "memorySize": 1360203776,
+        "committedMemory": 1359066864,
+        "capacity": 1304927448,
+        "used": 1302668528,
+        "available": 2258920
       },
       "code_space": {
-        "memorySize": 15204352,
-        "committedMemory": 14723040,
-        "capacity": 13282240,
-        "used": 13282240,
+        "memorySize": 26214400,
+        "committedMemory": 25979680,
+        "capacity": 23373600,
+        "used": 23373600,
         "available": 0
       },
       "map_space": {
-        "memorySize": 111161344,
-        "committedMemory": 110837552,
-        "capacity": 98584240,
-        "used": 98584240,
+        "memorySize": 102772736,
+        "committedMemory": 102381648,
+        "capacity": 90865840,
+        "used": 90865840,
         "available": 0
       },
       "large_object_space": {
-        "memorySize": 17272832,
-        "committedMemory": 17272832,
-        "capacity": 43885992,
-        "used": 15767464,
-        "available": 28118528
+        "memorySize": 5361664,
+        "committedMemory": 5361664,
+        "capacity": 31444120,
+        "used": 3997336,
+        "available": 27446784
       },
       "new_large_object_space": {
         "memorySize": 0,
@@ -164,26 +164,26 @@
     }
   },
   "resourceUsage": {
-    "userCpuSeconds": 251.574,
-    "kernelCpuSeconds": 251.574,
-    "cpuConsumptionPercent": 3.23192e-05,
-    "maxRss": 2027929600,
+    "userCpuSeconds": 439.874,
+    "kernelCpuSeconds": 439.874,
+    "cpuConsumptionPercent": 5.65038e-05,
+    "maxRss": 2520793088,
     "pageFaults": {
-      "IORequired": 23,
-      "IONotRequired": 6289943
+      "IORequired": 1,
+      "IONotRequired": 8619130
     },
     "fsActivity": {
-      "reads": 2056,
-      "writes": 720
+      "reads": 336,
+      "writes": 4464
     }
   },
   "uvthreadResourceUsage": {
-    "userCpuSeconds": 96.8167,
-    "kernelCpuSeconds": 96.8167,
-    "cpuConsumptionPercent": 1.24378e-05,
+    "userCpuSeconds": 178.267,
+    "kernelCpuSeconds": 178.267,
+    "cpuConsumptionPercent": 2.28992e-05,
     "fsActivity": {
-      "reads": 2008,
-      "writes": 568
+      "reads": 104,
+      "writes": 4040
     }
   },
   "libuv": [
@@ -207,7 +207,7 @@
     "npm_package_dependencies_winston_mongodb": "^3.0.0",
     "npm_config_bin_links": "true",
     "npm_config_key": "",
-    "SSH_AGENT_PID": "2023",
+    "SSH_AGENT_PID": "1903",
     "XDG_SESSION_TYPE": "x11",
     "npm_config_allow_same_version": "",
     "npm_config_description": "true",
@@ -273,7 +273,7 @@
     "npm_config_rebuild_bundle": "true",
     "npm_config_save_bundle": "",
     "npm_config_shell": "/bin/zsh",
-    "DESKTOP_AUTOSTART_ID": "1049c46f3ce0d3d137155678997727309300000019450007",
+    "DESKTOP_AUTOSTART_ID": "105a66676d7ea6f521155694937383156300000018250007",
     "_": "/usr/local/bin/npm",
     "npm_package_dependencies_express": "^4.16.4",
     "npm_config_dry_run": "",
@@ -289,7 +289,7 @@
     "npm_config_searchopts": "",
     "npm_config_versions": "",
     "USERNAME": "lenovo",
-    "XDG_SESSION_ID": "3",
+    "XDG_SESSION_ID": "2",
     "TERM": "xterm-256color",
     "npm_config_cache": "/home/lenovo/.npm",
     "npm_config_proxy": "",
@@ -307,13 +307,13 @@
     "PATH": "/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/lenovo/Desktop/vidly/node_modules/.bin:/home/lenovo/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/lenovo/Android/Sdk/emulator:/home/lenovo/Android/Sdk/tools:/home/lenovo/Android/Sdk/tools/bin:/home/lenovo/Android/Sdk/platform-tools:/home/lenovo/.vimpkg/bin:/home/lenovo/.vimpkg/bin",
     "DERBY_HOME": "/usr/lib/jvm/java-8-oracle/db",
     "PAPERSIZE": "a4",
-    "SESSION_MANAGER": "local/Pouria-LenovoY50-70:@/tmp/.ICE-unix/1945,unix/Pouria-LenovoY50-70:/tmp/.ICE-unix/1945",
+    "SESSION_MANAGER": "local/Pouria-LenovoY50-70:@/tmp/.ICE-unix/1825,unix/Pouria-LenovoY50-70:/tmp/.ICE-unix/1825",
     "npm_package_name": "vidly",
     "npm_config_audit_level": "low",
     "npm_config_prefer_offline": "",
     "NODE": "/usr/local/bin/node",
     "XDG_MENU_PREFIX": "gnome-",
-    "GNOME_TERMINAL_SCREEN": "/org/gnome/Terminal/screen/f8ee49ab_00b8_445d_87d2_679dc2a5506f",
+    "GNOME_TERMINAL_SCREEN": "/org/gnome/Terminal/screen/411e9125_9840_4667_ad16_8abd5b2ff80a",
     "LC_ADDRESS": "fa_IR.UTF-8",
     "XDG_RUNTIME_DIR": "/run/user/1000",
     "npm_config_color": "true",
@@ -334,11 +334,11 @@
     "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
     "XDG_SESSION_DESKTOP": "ubuntu",
     "XMODIFIERS": "@im=ibus",
-    "GNOME_TERMINAL_SERVICE": ":1.232",
+    "GNOME_TERMINAL_SERVICE": ":1.88",
     "XAUTHORITY": "/run/user/1000/gdm/Xauthority",
     "npm_package_main": "index.js",
     "npm_package_devDependencies_supertest": "^4.0.2",
-    "npm_package_gitHead": "c05c1a0fb15c6c42e6a31ef148fe18c4892a9530",
+    "npm_package_gitHead": "4f190f2399ee8ebd60c972d657c94e2db5274ae6",
     "npm_config_fetch_retry_maxtimeout": "60000",
     "npm_config_loglevel": "notice",
     "npm_config_logs_max": "10",

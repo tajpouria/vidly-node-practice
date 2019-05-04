@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 let server;
 const winston = require('winston');
 const request = require('supertest');

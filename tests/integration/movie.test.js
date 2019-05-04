@@ -2,229 +2,341 @@ let server;
 const winston = require('winston');
 const request = require('supertest');
 const { Movie } = require('../../models/movie');
+const { Genre } = require('../../models/genre');
 const adminToken = require('./adminToken');
+const mongoose = require('mongoose');
 
-describe('/api/genres', () => {
-  beforeEach(() => {
+describe('/api/movie', () => {
+  let movieId;
+  let token;
+  let movieTitle;
+  let genreId;
+  let numberInStock;
+  let dailyRentalRate;
+
+  const generateMovieId = mongoose.Types.ObjectId();
+
+  beforeEach(async () => {
     server = require('../../index');
+
+    movieId = generateMovieId;
+
+    await Movie.collection.insertMany(
+      [
+        {
+          _id: movieId,
+          title: 'movie1',
+          genre: { name: 'genre1' }
+        },
+        {
+          title: 'movie2',
+          genre: { name: 'genre2' }
+        }
+      ],
+      err => {
+        if (err) return winston.error(err.message, err);
+      }
+    );
   });
 
   afterEach(async () => {
     server.close();
     await Movie.deleteMany({});
+    await Genre.deleteMany({});
   });
 
   describe('GET/', () => {
-    it('Should return all movies when send GET request', async () => {
-      await Movie.collection.insertOne({
-        title: 'movie1',
-        genre: { name: '123' }
-      });
+    const execute = () => {
+      return request(server).get('/api/movies');
+    };
 
-      const res = await request(server).get('/api/movies');
-      console.log(res.body);
+    it('Should return all movies when send GET request', async () => {
+      const res = await execute();
       expect(res.status).toBe(200);
-      expect(res.body.length).toBe(1);
-      expect(res.body.some(g => g.title === 'movie1')).toBeTruthy();
+      expect(res.body.length).toBe(2);
+      expect(res.body.some(m => m.title === 'movie1')).toBeTruthy();
+      expect(res.body.some(m => m.title === 'movie2')).toBeTruthy();
+    });
+
+    it('should return 404 if no movie found', async () => {
+      await Movie.deleteMany({});
+
+      const res = await execute();
+
+      expect(res.status).toBe(404);
     });
   });
-  //   describe('GET/:id', () => {
-  //     it('Should return the genre by given id.', async () => {
-  //       const genre = new Movie({ name: 'genre1' });
-  //       await genre.save();
-  //       const res = await request(server).get(`/api/genres/${genre._id}`);
-  //       expect(res.status).toBe(200);
-  //       expect(res.body).toHaveProperty('name', 'genre1');
-  //     });
-  //     it('Should return 404 when receive an invalid id', async () => {
-  //       const res = await request(server).get('/api/genres/122');
-  //       expect(res.status).toBe(404);
-  //     });
-  //   });
-  //   describe('POST/', () => {
-  //     let token;
-  //     let genre;
+  describe('GET/:id', () => {
+    const execute = () => {
+      return request(server).get(`/api/movies/${movieId}`);
+    };
 
-  //     beforeEach(async () => {
-  //       token = await new User().generateAuthToken();
-  //     });
+    it('Should return 404 when receive an invalid id', async () => {
+      const res = await request(server).get('/api/movies/122');
+      expect(res.status).toBe(404);
+    });
 
-  //     const execude = async () => {
-  //       return await request(server)
-  //         .post('/api/genres')
-  //         .set('x-auth-token', token)
-  //         .send({ name: genre });
-  //     };
-  //     it('Should return 401 when user not logged in.', async () => {
-  //       token = '';
-  //       const res = await execude();
+    it('Should return the movie by given id.', async () => {
+      const res = await execute();
 
-  //       expect(res.status).toBe(401);
-  //     });
-  //     it('Should return 400 when genre name is less than 5 character', async () => {
-  //       genre = '1234';
-  //       const res = await execude();
+      expect(res.status).toBe(200);
+      expect(res.body).toHaveProperty('title', 'movie1');
+    });
+  });
+  describe('POST/', () => {
+    beforeEach(async () => {
+      token = adminToken;
+      movieTitle = '123';
+      genreId = mongoose.Types.ObjectId();
+      numberInStock = 1;
+      dailyRentalRate = 20;
 
-  //       expect(res.status).toBe(400);
-  //     });
-  //     it('Should return 400 when genre name is more than 50 character', async () => {
-  //       genre = new Array(52).join('a');
-  //       const res = await execude();
+      await Genre.collection.insertOne({ _id: genreId, name: '12345' });
+    });
 
-  //       expect(res.status).toBe(400);
-  //     });
-  //     it('Should save the genres req is valid', async () => {
-  //       genre = 'genre1';
-  //       const res = await execude();
+    const execute = () => {
+      return request(server)
+        .post('/api/movies')
+        .set('x-auth-token', token)
+        .send({
+          title: movieTitle,
+          genreId,
+          numberInStock,
+          dailyRentalRate
+        });
+    };
 
-  //       expect(res.status).toBe(200);
-  //       expect(await Movie.findOne({ name: 'genre1' })).not.toBeNull();
-  //     });
-  //     it('Should return genre if req is valid', async () => {
-  //       const res = await execude();
+    afterEach(async () => {
+      await Genre.deleteMany({});
+      Movie.deleteMany({});
+    });
 
-  //       expect(res.status).toBe(200);
-  //       expect(res.body).toHaveProperty('_id');
-  //       expect(res.body).toHaveProperty('name', 'genre1');
-  //     });
-  //   });
-  //   describe('PUT/', () => {
-  //     let token;
-  //     let id;
-  //     let name;
+    it('Should return 401 if no token provided', async () => {
+      token = '';
 
-  //     beforeEach(async () => {
-  //       const genre = new Movie({ name: 'genre1' });
-  //       await genre.save();
+      const res = await execute();
 
-  //       token = await new User().generateAuthToken();
-  //       id = genre._id;
-  //     });
+      expect(res.status).toBe(401);
+    });
 
-  //     const execude = async () => {
-  //       return request(server)
-  //         .put(`/api/genres/${id}`)
-  //         .set('x-auth-token', token)
-  //         .send({ name });
-  //     };
+    it('Should return 400 if movieTitle less than 3 character', async () => {
+      movieTitle = '12';
 
-  //     it('should return 401 if user not provided token', async () => {
-  //       token = '';
+      const res = await execute();
 
-  //       const res = await execude();
+      expect(res.status).toBe(400);
+    });
 
-  //       expect(res.status).toBe(401);
-  //     });
-  //     it('should return 400 if id not found', async () => {
-  //       id = '1';
+    it('Should return 400 if movieTitle more than 255 character', async () => {
+      movieTitle = new Array(257).join('a');
 
-  //       const res = await execude();
+      const res = await execute();
 
-  //       expect(res.status).toBe(400);
-  //     });
-  //     it('should return 400 if genre no name provided', async () => {
-  //       name = '';
+      expect(res.status).toBe(400);
+    });
 
-  //       const res = await execude();
+    it('Should return 400 no genresId is provided', async () => {
+      genreId = null;
 
-  //       expect(res.status).toBe(400);
-  //     });
-  //     it('should return 400 if genre name lessThan 5 character', async () => {
-  //       name = '1234';
+      const res = await execute();
 
-  //       const res = await execude();
+      expect(res.status).toBe(400);
+    });
 
-  //       expect(res.status).toBe(400);
-  //     });
-  //     it('should return 400 if genre name moreThan 50 character', async () => {
-  //       name = new Array(52).join('a');
+    it('Should return 400 no numberInStock is less than 0', async () => {
+      numberInStock = -1;
 
-  //       const res = await execude();
+      const res = await execute();
 
-  //       expect(res.status).toBe(400);
-  //     });
-  //     it('should return 200 if genre name is valid', async () => {
-  //       name = 'valid genre name';
+      expect(res.status).toBe(400);
+    });
 
-  //       const res = await execude();
+    it('Should return 400 dailyRentalRate is less than 0', async () => {
+      dailyRentalRate = -1;
 
-  //       expect(res.status).toBe(200);
-  //     });
-  //     it('should update genre by the given id', async () => {
-  //       name = 'valid name';
+      const res = await execute();
 
-  //       await execude();
+      expect(res.status).toBe(400);
+    });
 
-  //       const genre = await Movie.findById(id);
+    it('should return 200 if request is valid', async () => {
+      const res = await execute();
 
-  //       expect(genre).toHaveProperty('name', 'valid name');
-  //     });
-  //     it('should place updated genre into res.body', async () => {
-  //       name = 'valid name';
+      expect(res.status).toBe(200);
+    });
 
-  //       const res = await execude();
+    it('Should save the movie if request is valid', async () => {
+      await execute();
 
-  //       expect(res.body).toHaveProperty('_id');
-  //       expect(res.body).toHaveProperty('name', 'valid name');
-  //     });
-  //   });
-  //   describe('DELETE/', () => {
-  //     let id;
-  //     let token;
-  //     beforeEach(async () => {
-  //       const genre = new Movie({ name: 'genre1' });
-  //       await genre.save();
-  //       id = genre._id;
-  //       token = await new User().generateAuthToken();
-  //     });
-  //     const execude = () => {
-  //       return request(server)
-  //         .delete(`/api/genres/${id}`)
-  //         .set('x-auth-token', token)
-  //         .set('isAdmin', true);
-  //     };
+      const movie = await Movie.findById(movieId);
+      expect(movie).not.toBeNull();
+    });
 
-  //     it('should return 401 if token not provided', async () => {
-  //       token = '';
+    it('Should return movie if request is valid', async () => {
+      const res = await execute();
 
-  //       const res = await execude();
+      expect(res.body).toHaveProperty('_id');
+      expect(res.body).toHaveProperty('title', '123');
+    });
+  });
 
-  //       expect(res.status).toBe(401);
-  //     });
-  //     it('should return 403 if user not admin', async () => {
-  //       const res = await execude();
+  describe('PUT/', () => {
+    beforeEach(async () => {
+      token = adminToken;
+      movieTitle = '123';
+      genreId = mongoose.Types.ObjectId();
+      movieId = generateMovieId;
+      numberInStock = 1;
+      dailyRentalRate = 20;
 
-  //       expect(res.status).toBe(403);
-  //     });
-  //     it('should return 404 if genre not found', async () => {
-  //       token = adminToken;
-  //       id = 1;
+      await Genre.collection.insertOne({ _id: genreId, name: '12345' });
+    });
 
-  //       const res = await execude();
+    const execute = () => {
+      return request(server)
+        .put(`/api/movies/${movieId}`)
+        .set('x-auth-token', token)
+        .send({
+          title: movieTitle,
+          genreId,
+          numberInStock,
+          dailyRentalRate
+        });
+    };
 
-  //       expect(res.status).toBe(404);
-  //     });
-  //     it('should return 200 if user is admin and id is valid', async () => {
-  //       token = adminToken;
+    afterEach(async () => {
+      await Genre.deleteMany({});
+      Movie.deleteMany({});
+    });
 
-  //       const res = await execude();
+    it('Should return 401 if no token provided', async () => {
+      token = '';
 
-  //       expect(res.status).toBe(200);
-  //     });
-  //     it('should remove genre by given id if user is admin and id is valid', async () => {
-  //       token = adminToken;
+      const res = await execute();
 
-  //       await execude();
+      expect(res.status).toBe(401);
+    });
 
-  //       expect(await Movie.findById(id)).toBeUndefined;
-  //     });
-  //     it('should send removed genre to the user', async () => {
-  //       token = adminToken;
+    it('Should return 400 if movieTitle less than 3 character', async () => {
+      movieTitle = '12';
 
-  //       const res = await execude();
+      const res = await execute();
 
-  //       expect(res.body).toHaveProperty('_id');
-  //       expect(res.body).toHaveProperty('name', 'genre1');
-  //     });
-  //   });
+      expect(res.status).toBe(400);
+    });
+
+    it('Should return 400 if movieTitle more than 255 character', async () => {
+      movieTitle = new Array(257).join('a');
+
+      const res = await execute();
+
+      expect(res.status).toBe(400);
+    });
+
+    it('Should return 400 no genresId is provided', async () => {
+      genreId = null;
+
+      const res = await execute();
+
+      expect(res.status).toBe(400);
+    });
+
+    it('Should return 400 no numberInStock is less than 0', async () => {
+      numberInStock = -1;
+
+      const res = await execute();
+
+      expect(res.status).toBe(400);
+    });
+
+    it('Should return 400 dailyRentalRate is less than 0', async () => {
+      dailyRentalRate = -1;
+
+      const res = await execute();
+
+      expect(res.status).toBe(400);
+    });
+
+    it('Should return 404 if no movie founded by the given id', async () => {
+      movieId = '1';
+
+      const res = await execute();
+
+      expect(res.status).toBe(404);
+    });
+    it('should return 200 if request is valid', async () => {
+      const res = await execute();
+
+      expect(res.status).toBe(200);
+    });
+
+    it('Should update the movie if request is valid', async () => {
+      movieTitle = 'newTitle';
+
+      await execute();
+
+      const movie = await Movie.findById(movieId);
+      expect(movie.title).toBe('newTitle');
+    });
+
+    it('Should send Updated movie if request is valid', async () => {
+      movieTitle = 'newTitle';
+
+      const res = await execute();
+
+      expect(res.body).toHaveProperty('_id');
+      expect(res.body).toHaveProperty('title', 'newTitle');
+    });
+  });
+
+  describe('DELETE/', () => {
+    beforeEach(() => {
+      token = adminToken;
+      movieId = generateMovieId;
+    });
+
+    const execute = () => {
+      return request(server)
+        .delete(`/api/movies/${movieId}`)
+        .set('x-auth-token', token)
+        .set('isAdmin', true);
+    };
+
+    it('should return 401 if token not provided', async () => {
+      token = '';
+
+      const res = await execute();
+
+      expect(res.status).toBe(401);
+    });
+
+    it('should return 404 if no movie founded by the given id', async () => {
+      movieId = '1';
+
+      const res = await execute();
+
+      expect(res.status).toBe(404);
+    });
+
+    it('should return 200 if user is admin and id is valid', async () => {
+      const res = await execute();
+
+      expect(res.status).toBe(200);
+    });
+
+    it('should remove movie given id if user is admin and id is valid', async () => {
+      await execute();
+
+      expect(await Movie.findById(movieId)).toBeUndefined;
+    });
+
+    it('should send movie genre to the user', async () => {
+      token = adminToken;
+
+      const res = await execute();
+
+      expect(res.body).toHaveProperty('_id');
+      expect(res.body).toHaveProperty('title', 'movie1');
+    });
+  });
 });
