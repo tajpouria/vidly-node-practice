@@ -1,4 +1,4 @@
-![alt text](https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwietoS-04LiAhUGtRoKHd5yDYEQjRx6BAgBEAU&url=https%3A%2F%2Fdribbble.com%2Fshots%2F5418922-Vidly&psig=AOvVaw1h6dIEE3WWpBOLs7u8cugZ&ust=1557085977390434)
+![](https://cdn.dribbble.com/users/444784/screenshots/5418922/vidly-final-logo-color.jpg)
 
 # Vidly Express Server
 
